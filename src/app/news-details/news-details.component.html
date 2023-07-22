@@ -1,0 +1,28 @@
+
+<div class="container fluid">
+
+
+
+<div class="row my-5 py-5  vh-100 d-flex align-items-center justify-content-center">
+    <div class="col-md-7 ">
+        <div class="">
+            <img  class="w-100 rounded-3" *ngIf="arrayBusinessNews[num].urlToImage" [src]="arrayBusinessNews[num].urlToImage" alt="">
+        </div>
+    </div>
+    <div class="col-md-12 ">
+        <div class="text-center">
+            <h2 *ngIf="arrayBusinessNews[num].title" class="h4">Title : {{arrayBusinessNews[num].title}}</h2>
+            <p *ngIf="arrayBusinessNews[num].description" class="text-muted my-2">Description : {{arrayBusinessNews[num].description}}</p>
+           <h5 *ngIf="arrayBusinessNews[num].author">Author : {{arrayBusinessNews[num].author}}</h5>
+           <!-- <h4>{{num}}</h4> -->
+           <a [href]="arrayBusinessNews[num].url" target="_blank" class="text-decoration-none fs-3">Go to the website</a>
+        </div>
+    </div>
+</div> 
+
+
+
+
+</div>
+
+

@@ -1,0 +1,71 @@
+<div class="container-fluid">
+    <div class="row">
+
+        
+
+        
+
+        <div class="col-12  my-5 pe-5">
+            <div class="text-end d-flex justify-content-between ">
+
+                <div class="fs-5 w-25 text-center">
+                    <label for="">Search for news title</label>
+                    <input type="text"  [(ngModel)]="searchText" placeholder="Search here" class="form-control ms-5 mt-2">
+                </div>
+
+             <div class="ms-auto mx-5 d-none"> <label for="select">Seclect the language</label> <br>
+            <select class="mt-2 form-control"  name="Language"  id="Languages" (change)="changeLanguage()">
+                        <option selected value="en">English</option>
+                        <option value="ar">Arabic</option>
+                        <option value="fr">French</option>
+                </select>    </div>
+
+
+         <div class="mx-5">   <label for="select">Seclect the category</label> <br>         
+            <select class="mt-2 form-control" name="Categories"  id="Categories" (change)="changeLanguage()">
+                <option selected value="business">Business</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="health">Health</option>
+                <option value="technology">Technology</option>
+                <option value="sports">Sports</option>
+                <option value="science">Science</option>
+                <option value="general">General</option>
+            </select>  
+        
+        </div>
+
+
+        <div class="">
+            <h4 class="opacity-0">f</h4>
+            <button class="form-control" (click)="modeToggle()">change theme</button>
+        </div>
+
+
+
+            </div>
+            
+        </div>
+
+        <div *ngFor="let news of arrayBusinessNews|search:searchText  |  paginate:{itemsPerPage:pageSize , currentPage:page , totalItems:count}  , let index = index"  class="col-md-6 col-xl-3 item">
+
+            <app-template-news [item]="news"    [index]="index  + (page * pageSize - 8)"   ></app-template-news>
+
+            
+
+
+        </div>
+    </div>
+</div>
+
+<div class="bg-dark text-white p-5 mb-5 text-center ">
+<pagination-controls
+previousLabel='Prev'
+nextLabel="Next"
+(pageChange)="onTableDataChange($event)"
+
+>
+</pagination-controls>
+</div>
+<!-- <div class="">
+    <app-news-details [arrayBusinessNews]="arrayBusinessNews"></app-news-details>
+</div> -->

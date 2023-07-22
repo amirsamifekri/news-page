@@ -1,0 +1,27 @@
+<div class="innerDiv my-4 ">
+    
+    
+
+<a  [routerLink]="['/newsdetails' , index]" target="_blank" class="text-decoration-none ">
+    
+    <figure>
+     <div class="imageContainer position-relative overflow-hidden">  
+           <img  class="w-100" *ngIf="item.urlToImage" [src]="item.urlToImage" alt="">
+         <div class="imageLayer position-absolute top-0 bottom-0 start-0 end-0 "></div>
+     </div>
+
+     
+     <figcaption class="pb-4 pt-2 ps-2">
+        <h2 *ngIf="item.title" class="h4">Title : {{item.title}}</h2>
+        <!-- <p *ngIf="item.description" class="text-muted my-2">{{item.description}}</p> -->
+        <!-- <h5  *ngIf="item.author">Author : {{item.author}}</h5> -->
+        <!-- <h4>{{index}}</h4> -->
+        <!-- <h4>{{i}}</h4> -->
+        <!-- <h4>{{TemplateNewsComponent.c++}}</h4> -->
+        <!-- <h4>{{arrayBusinessNews.indexOf(thi)}}</h4> -->
+    </figcaption>
+    
+</figure>
+</a>
+
+</div>

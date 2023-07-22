@@ -1,0 +1,31 @@
+.imageLayer{
+    background-color: rgb(0, 0, 0 , 0.5);
+    transition: all 0.3s;
+}
+
+
+.imageContainer:hover > .imageLayer{
+    background-color: transparent;
+
+}
+
+.imageContainer img{
+    transition: all 0.5s;
+}
+
+
+.imageContainer:hover img{
+   transform: scale(1.2);
+
+}
+
+.innerDiv{
+    height: 700px;
+    box-shadow: 5px 5px 5px ;
+    /* background-color: red; */
+    /* color: red; */
+}
+
+a{
+    color: var(--color-text);
+}
